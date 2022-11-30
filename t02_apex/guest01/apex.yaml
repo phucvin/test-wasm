@@ -1,0 +1,28 @@
+spec: spec.apexlang
+config:
+  package: guest01
+  module: guest01
+generates:
+  pkg/guest01/interfaces.go:
+    module: '@apexlang/codegen/go'
+    visitorClass: InterfacesVisitor
+  pkg/guest01/msgpack.go:
+    module: '@apexlang/codegen/go'
+    visitorClass: MsgPackVisitor
+  pkg/guest01/wapc.go:
+    module: '@wapc/codegen/tinygo'
+    visitorClass: ExportVisitor
+  pkg/guest01/services.go:
+    ifNotExists: true
+    module: '@apexlang/codegen/go'
+    visitorClass: ScaffoldVisitor
+    config:
+      types:
+        - service
+  cmd/main.go:
+    ifNotExists: false
+    module: '@wapc/codegen/tinygo'
+    visitorClass: MainVisitor
+    config:
+      import: guest01/pkg/guest01
+
