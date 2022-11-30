@@ -4,8 +4,6 @@ apex install @wapc/codegen
 
 apex new @wapc/tinygo guest01
 
-## guest01 - with e01
+## guest01
 
-apex generate
-
-tinygo build -o guest01.wasm -target wasi cmd/main.go
+make
