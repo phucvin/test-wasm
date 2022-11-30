@@ -4,3 +4,4 @@
 *.deb
 target/
 node_modules/
+!Makefile
