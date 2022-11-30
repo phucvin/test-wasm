@@ -13,3 +13,5 @@ wasmedgec fib.wasm fib.aot.wasm
 time wasmedge fib.aot.wasm
 
 time wasmedge --reactor fib.aot.wasm fib 42
+
+wasmedge --enable-all-statistics --reactor fib.aot.wasm fib 42
