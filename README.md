@@ -9,6 +9,7 @@ TODO:
 * https://hacks.mozilla.org/2019/08/webassembly-interface-types/
 * https://github.com/WebAssembly/interface-types/blob/main/proposals/interface-types/Explainer.md
 * https://github.com/second-state/dapr-wasm
+* https://wasmedge.org/book/en/use_cases/frameworks/app/reactr.html#database-query
 
 
 Done:
