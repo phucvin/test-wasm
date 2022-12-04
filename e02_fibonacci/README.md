@@ -15,3 +15,11 @@ time wasmedge fib.aot.wasm
 time wasmedge --reactor fib.aot.wasm fib 42
 
 wasmedge --enable-all-statistics --reactor fib.aot.wasm fib 42
+
+## with t05
+
+time wasmtime run fib.wasm
+
+## with t05
+
+time wasmer fih.wasm
