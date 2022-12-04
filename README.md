@@ -2,6 +2,7 @@
 
 TODO:
 * https://github.com/tetratelabs/wazero/tree/main/imports/go/example
+* https://github.com/adilevin/wasm/tree/master/two-modules-shared-mem
 * https://github.com/nanobus/nanobus
 * https://github.com/nanobus/iota/tree/main/go/wasmrs
 * https://github.com/nanobus/iota/tree/main/rust
