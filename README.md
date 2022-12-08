@@ -12,6 +12,11 @@ TODO:
 * https://github.com/WebAssembly/interface-types/blob/main/proposals/interface-types/Explainer.md
 * https://github.com/second-state/dapr-wasm
 * https://wasmedge.org/book/en/use_cases/frameworks/app/reactr.html#database-query
+* Benchmark host-managed typed array
+* Benchmark host-managed promises
+
+Ideas:
+* Host-managed typed array: new, get(i), set(i, v), delete are implemented in host
 
 
 Done:
