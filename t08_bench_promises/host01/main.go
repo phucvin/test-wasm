@@ -46,21 +46,23 @@ func main() {
     instance, err := linker.Instantiate(store, module)
     check(err)
 
-	var n int32
-	n = 1000000
+	for i := 0 ; i < 10; i += 1 {
+		var n int32
+		n = 1000000
 
-	fmt.Printf("(host) native: %d\n", native(n))
+		fmt.Printf("(host) native: %d\n", native(n))
 
-    run := instance.GetFunc(store, "test")
-    if run == nil {
-        panic("not a function")
-    }
-    output, err := run.Call(store, n)
-    check(err)
-	fmt.Printf("(host) test: %d\n", output)
+		run := instance.GetFunc(store, "test")
+		if run == nil {
+			panic("not a function")
+		}
+		output, err := run.Call(store, n)
+		check(err)
+		fmt.Printf("(host) test: %d\n", output)
 
-	if len(handleMap) > 0{
-		panic("async leak")
+		if len(handleMap) > 0{
+			panic("async leak")
+		}
 	}
 }
 
