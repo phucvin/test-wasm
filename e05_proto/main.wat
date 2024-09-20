@@ -6,6 +6,7 @@
  (type $4 (func))
  (type $5 (func (param i32 i32 i32)))
  (type $6 (func (param i32 i32 i32 i32)))
+ (type $7 (func (param i64 i64 i64 i64) (result i64)))
  (import "env" "abort" (func $~lib/builtins/abort (param i32 i32 i32 i32)))
  (global $~lib/rt/stub/offset (mut i32) (i32.const 0))
  (global $~lib/as-proto/assembly/Protobuf/WRITER (mut i32) (i32.const 0))
@@ -51,7 +52,8 @@
  (data $19.1 (i32.const 2056) "\02\00\00\00\1c\00\00\00~\00l\00i\00b\00/\00s\00t\00r\00i\00n\00g\00.\00t\00s")
  (table $0 2 2 funcref)
  (elem $0 (i32.const 1) $codelab/DiceRoll/DiceRoll.encode)
- (export "fib" (func $main/fib))
+ (export "test" (func $main/test))
+ (export "process_proto" (func $main/process_proto))
  (export "memory" (memory $0))
  (start $~start)
  (func $~lib/rt/stub/maybeGrowMemory (param $0 i32)
@@ -986,7 +988,7 @@
   i32.const 0
   call $~lib/rt/common/OBJECT#set:rtId
  )
- (func $main/fib (param $0 i32) (result i32)
+ (func $main/test (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
@@ -1164,6 +1166,9 @@
   call_indirect (type $0)
   global.get $~lib/as-proto/assembly/Protobuf/WRITER
   i32.load offset=8
+ )
+ (func $main/process_proto (param $0 i64) (param $1 i64) (param $2 i64) (param $3 i64) (result i64)
+  i64.const 0
  )
  (func $~lib/string/String.UTF8.encodeUnsafe (param $0 i32) (param $1 i32) (param $2 i32)
   (local $3 i32)
