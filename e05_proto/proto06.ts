@@ -10,5 +10,13 @@ export function test(n: i32): Uint8Array {
 export function process_proto(
     input_ptr: u64, input_size: u64,
     output_ptr: u64, output_max_size: u64) : u64 {
-    return 0;
+    var rolls = 1;
+
+    var output = new DiceRoll();
+    output.value = 40;
+    output.nickname = `sum of ${rolls} rolls`;
+    var output_buf = Protobuf.encode(output, DiceRoll.encode);
+    memory.copy(<usize>output_ptr, changetype<usize>(output_buf.buffer),
+        output_buf.length);
+    return output_buf.length;
 }
